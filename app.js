@@ -10,8 +10,19 @@ function loadDataFirstStatus(){
     // Create object
     const XHR = new XMLHttpRequest()
 
-    // 
+    // Open a new request
+    XHR.open("GET", "./README.md")
+    
+    // Load request
+    XHR.onload = function (){
+        if (this.status === 200){
 
+        }
+    }
+
+
+    // Send request
+    XHR.send()
 
 
 
