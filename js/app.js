@@ -6,25 +6,24 @@
 document
   .querySelector(".btn btn-primary btn-custom")
   .addEventListener("click", loadDataFirstStatus);
+  console.log("Success");
+
 // Function for handling first button
 function loadDataFirstStatus() {
+  console.log("Success");
+
   // Create object
   const XHR = new XMLHttpRequest();
 
   // Open a new request
-  XHR.open("GET", "./README.md");
+  XHR.open("GET", "./test.txt");
 
   // Load request
   XHR.onload = function () {
-    if (this.status === 800) {
-      alert("Status code: " + this.status);
+    if (this.status === 200) {
+      console.log("Success");
     } else {
-      //   Swal.fire({
-      //     icon: "error",
-      //     title: "Oops...",
-      //     text: "Something went wrong!",
-      //     footer: '<a href="#">Why do I have this issue?</a>',
-      //   });
+      console.log("not found");
     }
   };
 
