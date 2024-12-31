@@ -16,14 +16,15 @@ function loadDataFirstStatus() {
 
   // Load request
   XHR.onload = function () {
-    if (this.status === 200) {
+    if (this.status === 800) {
+      alert("Status code: " + this.status);
     } else {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Something went wrong!",
-        footer: '<a href="#">Why do I have this issue?</a>',
-      });
+      //   Swal.fire({
+      //     icon: "error",
+      //     title: "Oops...",
+      //     text: "Something went wrong!",
+      //     footer: '<a href="#">Why do I have this issue?</a>',
+      //   });
     }
   };
 
@@ -31,5 +32,42 @@ function loadDataFirstStatus() {
   XHR.send();
 }
 
-// HTTP status codes
-// HTTP status codes
+
+// _________________________________________________________________________
+// HTTP status codes = 404
+
+// Select button
+document
+  .querySelector(".btn btn-primary btn-custom")
+  .addEventListener("click", loadDataSecondStatus);
+
+// Function for handling second button
+
+function loadDataSecondStatus() {
+  // Create object
+  const XHR = new XMLHttpRequest();
+
+  // Open a new request
+  XHR.open("GET", "./non-existent-file.txt");
+
+  // Load request
+  XHR.onload = function () {
+    if (this.status === 404) {
+      alert("Status code: " + this.status);
+    } else {
+      //   Swal.fire({
+      //     icon: "error",
+      //     title: "Oops...",
+      //     text: "Something went wrong!",
+      //     footer: '<a href="#">Why do I have this issue?</a>',
+      //   });
+    }
+  };
+
+  // Send request
+  XHR.send();
+}
+
+// HTTP status codes = 500
+
+
