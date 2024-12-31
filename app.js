@@ -7,6 +7,14 @@ document.querySelector(".btn btn-primary btn-custom").addEventListener("click",l
 // Function for handling first button   
 function loadDataFirstStatus(){
     
+    // Create object
+    const XHR = new XMLHttpRequest()
+
+    // 
+
+
+
+
 }
 
 
